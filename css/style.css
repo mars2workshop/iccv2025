@@ -1,0 +1,192 @@
+/* 基础样式 */
+:root {
+    --primary-color: #0056b3; /* ICCV蓝色 */
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding-top: 56px; /* 为固定导航栏留出空间 */
+}
+
+/* 标题样式 */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 英雄区域 */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../images/background.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 120px 0;
+    color: white;
+    text-align: center;
+}
+
+/* 卡片样式 */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* 导航栏活动状态 */
+.nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+/* 页脚链接悬停效果 */
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+/* 固定尺寸的图片容器 */
+.speaker-img-container {
+    width: 150px;
+    height: 150px;
+    margin: 1rem auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #f0f0f0;
+}
+
+/* 图片样式调整 */
+.speaker-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 组织者图像容器 - 固定尺寸完美圆形 */
+.organizer-img-container {
+    width: 150px;
+    height: 150px;
+    margin: 1rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #f8f9fa; /* 浅色边框 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 组织者图像 - 完全填充容器 */
+.organizer-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* 悬停效果 */
+.organizer-img-container:hover .organizer-img {
+    transform: scale(1.05);
+}
+
+.text-justify {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+}
+
+
+/* Competition Organizers 样式 */
+.organizers-list {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.organizers-list li {
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.organizers-list li:last-child {
+    border-bottom: none;
+}
+
+.organizers-list span {
+    padding: 8px 0;
+}
+
+
+.organizers-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+.organizers-scroll-row {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 5px 5px 15px;
+}
+.organizer-scroll-item {
+    flex: 0 0 auto;
+    width: 180px;
+}
+.organizer-scroll-item .card {
+    min-height: 120px;
+}
+/* Hide scrollbar but keep functionality */
+.organizers-scroll-container::-webkit-scrollbar {
+    height: 5px;
+}
+.organizers-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.organizers-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.organizers-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
